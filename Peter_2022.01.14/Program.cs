@@ -50,9 +50,60 @@ namespace Peter_2022._01._14
             {
                 if (N % i == 0)
                 {
-                    Console.Write(i + ",");
+                    if (i == N)
+                    {
+                        Console.Write(i);
+                    }
+                    else
+                    {
+                        Console.Write(i + ",");
+                    }                  
                 }
             }
+            Console.WriteLine();
+            
+            //Console.Write(N);
+            //18.feladat: Írj programot, mely beolvas egy pozitív egész számot, és kiírja az osztóinak az
+            //összegét!
+            //Összegzés törvényét használjuk a feladatmegoldás során!
+            int osszeg = 0;
+            for (int i = 1; i <= N; i++)
+            {
+                if (N % i == 0)
+                {                 
+                    osszeg = osszeg + i;
+                }
+            }
+            Console.WriteLine($"{N}-ig az osztahtó számok összege: {osszeg}");
+
+            //19.feladat: Írj programot, mely beolvas egy pozitív egész számot, és megmondja, hogy
+            //tökéletes szám-e!(A tökéletes számok azok, melyek osztóinak összege egyenlő a
+            //szám kétszeresével.
+            int osszeg_tokeletes = 0;
+            for (int i = 1; i <= N; i++)
+            {
+                if (N % i == 0)
+                {
+                    osszeg_tokeletes = osszeg_tokeletes + i;
+                }
+            }
+            if (2*N == osszeg_tokeletes)
+            {
+                Console.WriteLine($"Tökéletes szám!");
+            }
+            else
+            {
+                Console.WriteLine($"NEM tökéletes szám!");
+            }
+
+            //20.feladat: Írj programot, mely beolvassa a hatvány alapját és a kitevőt, és kiírja a
+            //hatványértéket!
+            Console.Write("Kérem adje meg a hatvány alapját: ");
+            int alap = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Kérem adje meg a hatvány kitevőjét: ");
+            int kitevo = Convert.ToInt32(Console.ReadLine());
+
+            //Console.WriteLine($"{alap}^{kitevo}={Math.Pow(alap,kitevo)}");
             Console.ReadKey();
         }
     }
